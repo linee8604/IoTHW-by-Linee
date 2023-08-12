@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "author": "Ms: Vongmany Labbandit (Linee)",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 22.55,
+      "left": 144.83,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 108.91,
+      "left": 146.35,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 22.59,
+      "left": 188.26,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 107.77,
+      "left": 186.88,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "led1:C", "esp:GND.1", "purple", [ "v0" ] ],
+    [ "led1:A", "r1:1", "cyan", [ "v0" ] ],
+    [ "r1:2", "esp:D5", "cyan", [ "h0" ] ],
+    [ "led2:C", "esp:GND.1", "gold", [ "v0" ] ],
+    [ "led2:A", "r2:1", "blue", [ "v0" ] ],
+    [ "r2:2", "esp:D2", "blue", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
